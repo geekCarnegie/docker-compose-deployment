@@ -1,0 +1,14 @@
+version: "3"
+services:
+  eureka-server:
+    hostname: eureka-server
+    image: geekcarnegie/eureka-server-single:1.0.0
+    restart: always
+    networks:
+      - springcloud_net
+    ports:
+      - "8761:8761"
+networks:
+ springcloud_net:
+  external:
+   name: springcloud
