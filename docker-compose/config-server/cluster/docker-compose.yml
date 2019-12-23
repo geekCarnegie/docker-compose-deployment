@@ -1,0 +1,26 @@
+version: "3"
+services:
+  config-server1:
+    hostname: config-server1
+    image: geekcarnegie/config-server-cluster:1.0.0
+    restart: always
+    networks:
+      - springcloud_net
+    ports:
+      - "8769:8769"
+    environment:
+      - spring.profiles.active=config-server1
+  config-server2:
+    hostname: config-server2
+    image: geekcarnegie/config-server-cluster:1.0.0
+    restart: always
+    networks:
+      - springcloud_net
+    ports:
+      - "8770:8770"
+    environment:
+      - spring.profiles.active=config-server2
+networks:
+ springcloud_net:
+  external:
+   name: springcloud

@@ -1,0 +1,14 @@
+version: "3"
+services:
+  config-server:
+    hostname: config-server
+    image: geekcarnegie/config-server-single:1.0.0
+    restart: always
+    networks:
+      - springcloud_net
+    ports:
+      - "8769:8769"
+networks:
+ springcloud_net:
+  external:
+   name: springcloud
