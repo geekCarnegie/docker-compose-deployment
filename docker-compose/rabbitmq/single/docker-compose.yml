@@ -1,0 +1,24 @@
+version: "3"
+services:
+  rabbitmq:
+    hostname: rabbitmq
+    container_name: rabbitmq
+    image: rabbitmq:3.8-management
+    restart: always
+    networks:
+      - rabbitmq_net
+    ports:
+      - "4369:4369"
+      - "5671:5671"
+      - "5672:5672"
+      - "15672:15672"
+      - "25672:25672"
+    volumes:
+      - "/Users/carnegielee/Desktop/volumes/rabbitmq/data:/var/lib/rabbitmq"
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=geektech
+networks:
+ rabbitmq_net:
+  external:
+   name: rabbitmq
