@@ -1,0 +1,18 @@
+version: "3"
+services:
+  redis:
+    image: redis:latest
+    restart: always
+    networks:
+      - redis_net
+    ports:
+      - "6379:6379"
+    volumes:
+      - "/Users/carnegielee/Desktop/volumes/redis/conf:/usr/local/etc/redis"
+      - "/Users/carnegielee/Desktop/volumes/redis/data:/data"
+    command:
+      redis-server /usr/local/etc/redis/redis.conf
+networks:
+ redis_net:
+  external:
+   name: redis
