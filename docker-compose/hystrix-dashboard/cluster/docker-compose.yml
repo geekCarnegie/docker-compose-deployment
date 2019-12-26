@@ -1,0 +1,14 @@
+version: "3"
+services:
+  hystrix-dashboard:
+    hostname: hystrix-dashboard
+    image: geekcarnegie/hystrix-dashboard-cluster:1.0.0
+    restart: always
+    networks:
+      - springcloud_net
+    ports:
+      - "8010:8010"
+networks:
+ springcloud_net:
+  external:
+   name: springcloud

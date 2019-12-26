@@ -2,7 +2,7 @@ version: "3"
 services:
   hystrix-dashboard:
     hostname: hystrix-dashboard
-    image: geekcarnegie/hystrix-dashboard:1.0.0
+    image: geekcarnegie/hystrix-dashboard-single:1.0.0
     restart: always
     networks:
       - springcloud_net
