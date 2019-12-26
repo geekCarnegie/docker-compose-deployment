@@ -8,6 +8,8 @@ services:
       - springcloud_net
     ports:
       - "8769:8769"
+    volumes:
+      - /Users/carnegielee/Desktop/volumes/config-server1:/root/config-server
     environment:
       - spring.profiles.active=config-server1
   config-server2:
@@ -18,6 +20,8 @@ services:
       - springcloud_net
     ports:
       - "8770:8770"
+    volumes:
+      - /Users/carnegielee/Desktop/volumes/config-server2:/root/config-server
     environment:
       - spring.profiles.active=config-server2
 networks:

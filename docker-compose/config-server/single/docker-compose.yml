@@ -8,6 +8,8 @@ services:
       - springcloud_net
     ports:
       - "8769:8769"
+    volumes:
+      - /Users/carnegielee/Desktop/volumes/config-server:/root/config-server
 networks:
  springcloud_net:
   external:
