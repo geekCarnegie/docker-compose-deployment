@@ -1,0 +1,14 @@
+version: "3"
+services:
+  zuul-service:
+    hostname: zuul-service
+    image: geekcarnegie/zuul-service:1.0.0
+    restart: always
+    networks:
+      - springcloud_net
+    ports:
+      - "80:80"
+networks:
+ springcloud_net:
+  external:
+   name: springcloud
