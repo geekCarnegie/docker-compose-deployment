@@ -1,0 +1,14 @@
+version: "3"
+services:
+  zipkin-server:
+    hostname: zipkin-server
+    image: geekcarnegie/zipkin-server-cluster:1.0.0
+    restart: always
+    networks:
+      - springcloud_net
+    ports:
+      - "9411:9411"
+networks:
+ springcloud_net:
+  external:
+   name: springcloud
